@@ -1,14 +1,13 @@
 {
   "name": "be_invovest_c",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "npx prisma generate && npx tsc",
+    "build": "node node_modules/typescript/lib/tsc.js",
     "start": "node dist/index.js",
-    "studio": "prisma studio"
+    "studio": "prisma studio",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
