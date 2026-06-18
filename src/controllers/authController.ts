@@ -58,11 +58,14 @@ export const register = async (req: Request, res: Response) => {
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
+  // VALIDASI FOTO: Jika kosong, pasang avatar default di database
+  const finalFoto = foto && foto.trim() !== "" ? foto : "https://i.pravatar.cc/150";
+
   const newUser = await prisma.user.create({
     data: {
       name,
       email,
-      foto,
+      foto: finalFoto,
       password: hashedPassword,
     },
   });
