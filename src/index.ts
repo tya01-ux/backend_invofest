@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json()); 
 
 app.get("/", (req, res) => {
-  res.send("Hello, World!");
+  res.send("Hello Railllway 2!");
 });
 
 //  import dan gunakan routes
